@@ -11,7 +11,7 @@ if (-not (Test-Path $dir)) {
 $url = 'https://raw.githubusercontent.com/Tianodont/imghost/82e305df330d00c5dab85a9ffae555eb12a1bf08/98d1f355d65952c1c506021a8ab57832cd4cb39d.jpg'
 
 # Скачиваем картинку
-Invoke-WebRequest -Uri $url -OutFile $wallpaperPath -Headers @{ "User-Agent" = "Mozilla/5.0" } -UseBasicParsing -TimeoutSec 30
+curl $url -o $wallpaperPath
 
 # Функция установки обоев
 function Set-Wallpaper {
